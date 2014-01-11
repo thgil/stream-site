@@ -1,0 +1,20 @@
+body, html {
+	background-color: transparent;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	height: 100%;
+	margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.border {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:50px solid blue; 
+	height: 100%;
+}

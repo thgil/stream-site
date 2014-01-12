@@ -12,9 +12,14 @@ a {
 }
 
 .border {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
-	border:50px solid blue; 
-	height: 100%;
+	border: 20px solid blue; 
+	width: 400px;
+	height: 300px;
 }

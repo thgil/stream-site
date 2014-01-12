@@ -12,14 +12,25 @@ a {
 }
 
 .border {
-	position: absolute;
-	bottom: 0;
-	right: 0;
 
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
-	border: 20px solid blue; 
-	width: 400px;
-	height: 300px;
+	border: 50px solid blue; 
+	height: 100%;
+
+}
+
+.webcam {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+
+	width: 300px;
+	height: 200px;
+
+	margin: 50px;
+
+	/* Little hack to put webcam overhang bits behind border */
+	z-index: -1;
 }

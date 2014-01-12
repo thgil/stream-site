@@ -34,9 +34,10 @@ html.no-js
     block content
 
     // /container
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
-    script
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\\/script>')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    // Fallback jquery
+      script
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\\/script>')
     script(src='js/vendor/bootstrap.min.js')
     script(src='js/main.js')
     script.

@@ -1,6 +1,141 @@
 extends layout
 
 block content
+  div.form-group.
+    <form role="form" action="https://madmimi.com/signups/subscribe/98558" id="mad_mimi_signup_form" method="post" target="_blank">
+    <div class="form-group">
+      <div class="required">
+          <label for="signup_email">Email</label>
+          <br/>
+          <input class="required form-control"  data-invalid-email="This field is invalid" data-required-field="This field is required" id="signup_email" name="signup[email]" placeholder="you@example.com" type="text"/>
+       </div>
+      </div>
+       <div>
+          <input class="submit btn btn-default" data-choose-list="&#8593; Choose a list" data-default-text="Subscribe" data-invalid-text="&#8593; You forgot some required fields" data-submitting-text="Sending..." id="webform_submit_button" name="commit" type="submit" value="Subscribe"/>
+       </div>
+    </form>
+    <script type="text/javascript">
+    (function() {
+      var form = document.getElementById("mad_mimi_signup_form"),
+          submit = document.getElementById("webform_submit_button"),
+          validEmail = /.+@.+\..+/,
+          isValid;
+          
+      form.onsubmit = function(event) {
+        validate();
+        if(!isValid) {
+          revalidateOnChange();
+          return false;
+        }
+      };
+      
+      function validate() {
+        isValid = true;
+        emailValidation();
+        fieldsValidation();
+        listsValidation();
+        updateFormAfterValidation();
+      }
+
+      function emailValidation() {
+        var email = document.getElementById("signup_email");
+        if(!validEmail.test(email.value)) {
+          errorMessage(email);
+          isValid = false;
+        } else {
+          removeErrorMessage(email);
+        }
+      }
+
+      function fieldsValidation() {
+        for(var i = 0; i < form.elements.length; ++i) {
+          var input = form.elements[i];
+          if(input.id == "signup_email") continue;
+          if(input.className.indexOf("required") >= 0) {
+            if(input.value == "") {
+              errorMessage(input)
+              isValid = false;
+            } else {
+              removeErrorMessage(input);
+            }
+          }
+        }
+      }
+
+      function listsValidation() {
+        var mainListsDiv = document.getElementById("signup_audience_lists");
+        if(mainListsDiv && mainListsDiv.className.indexOf("required") >= 0) {
+          var listSelected = false;
+          for(var i = 0; i < form.elements.length; ++i) {
+            var input = form.elements[i];
+            if(input.type != "checkbox") continue;
+            if(input.checked) listSelected = true;
+          }
+          if(!listSelected) {
+            if(mainListsDiv.className.indexOf("invalid") == -1) mainListsDiv.className += " invalid";
+            isValid = false;
+          } else {
+            mainListsDiv.className = mainListsDiv.className.replace(/ invalid/g, "");
+          }
+        }
+      }
+
+      function errorMessage(input) {
+        input.className   = "required form-control invalid";
+        input.placeholder = input.getAttribute("data-required-field");
+      }
+
+      function removeErrorMessage(input) {
+        input.className   = "required form-control";
+        input.placeholder = "";
+      }
+
+      function updateFormAfterValidation() {
+        form.className = isValid ? "" : "mimi_invalid";
+        submit.value = submitButtonText();
+        submit.disabled = !isValid;
+        submit.className = isValid ? "submit btn btn-default" : "disabled btn btn-default";
+      }
+
+      function submitButtonText() {
+        var text;
+        if(isValid) {
+          text = submit.getAttribute("data-default-text");
+        } else {
+          var allFieldsValid = checkIfAllFieldsAreValid();
+          if(allFieldsValid) {
+            text = submit.getAttribute("data-choose-list");
+          } else {
+            text = submit.getAttribute("data-invalid-text");
+          }
+        }
+        return text;
+      }
+
+      function checkIfAllFieldsAreValid() {
+        var allFieldsValid = true
+        for(var i = 0; i < form.elements.length; ++i) {
+          var input = form.elements[i];
+          if(input.placeholder && input.placeholder.length > 0) allFieldsValid = false;
+        }
+        return allFieldsValid;
+      }
+
+      function revalidateOnChange() {
+        for(var i = 0; i < form.elements.length; ++i) {
+          var input = form.elements[i];
+          if(input.className.indexOf("required") >= 0 || input.type == "checkbox") {
+            input.onchange = validate;
+          }
+        }
+      }
+      })();
+      </script>
+  // /form
+
+//  
   .border
     .webcam
       | <iframe width="100%" height="100%" src="https://apprtc.appspot.com/?r=79067713"></iframe>
+
+      

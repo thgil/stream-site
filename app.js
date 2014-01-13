@@ -49,7 +49,8 @@ app.use(app.router);
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-app.get('/madmini/signed', routes.signed);
+
+app.get('/webrtc', routes.webrtc);
 app.get('/', routes.index);
 
 app.use(function(err, req, res, next){

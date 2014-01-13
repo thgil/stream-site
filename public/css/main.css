@@ -29,14 +29,18 @@ body {
 }
 
 /* Features */
-.feature1 {
+.features {
+  padding-top:20px;
+}
 
+.feature1 {
   background:transparent url(/img/section-bg.jpg) center center;
   background-size:cover;
 }
 
 .featurette {
-  padding: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   height: auto;
 }
 

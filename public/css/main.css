@@ -23,7 +23,7 @@ body {
 .form-signup .form-control:focus {
   z-index: 2;
 }
-.form-signup input[type="text"] {
+.form-signup input[type="email"] {
   width : 70%;
   margin-right: 10px;
 }

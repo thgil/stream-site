@@ -1,8 +1,22 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  color: #5a5a5a;
+  /*color: #5a5a5a;*/
 }
+
+/* Header */
+.header {
+  background-image: url(/img/HEAD.jpg);
+  background-size: cover;
+  min-height:500px;
+}
+
+.header-blurb {
+  position: relative;
+  left: 500px;
+  width: 600px;
+}
+
 /* Signup form */
 .form-signup {
   margin: 0 auto;
@@ -30,20 +44,26 @@ body {
 
 /* Features */
 .features {
-  padding-top:100px;
 }
 
 .feature1 {
-  background:transparent url(/img/section-bg.jpg) center center;
+  background:transparent url(/img/hearthstone-bg.jpg) center center;
   background-size:cover;
   color:white;
   text-shadow: 2px 2px black;
 }
 .feature2 {
-  background-size:cover;
 }
 .feature3 {
-  background:transparent url(/img/section-bg.jpg) center center;
+  background:transparent url(/img/tf2-bg.jpg) center center;
+  background-size:cover;
+  color:white;
+  text-shadow: 2px 2px black;
+}
+.feature4 {
+}
+.feature5 {
+  background:transparent url(/img/dota2-bg.jpg) center center;
   background-size:cover;
   color:white;
   text-shadow: 2px 2px black;
@@ -52,11 +72,11 @@ body {
 .featurette {
   padding-top: 60px;
   padding-bottom: 60px;
-  height: 500px;
+  height: auto;
 }
 
 .featurette-img {
-  max-height: 380px;
+  max-height: 320px;
 }
 
 .featurette-divider {

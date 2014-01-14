@@ -10,3 +10,7 @@ exports.index = function(req, res){
 exports.webrtc = function(req, res) {
   res.render('webrtc');
 };
+
+exports.screencapture = function(req, res) {
+  res.render('screencapture');
+};

@@ -2,6 +2,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   /*color: #5a5a5a;*/ 
+  font-family: "ITC Avant Garde Gothic";
 }
 
 #localVideo {
@@ -17,7 +18,9 @@ body {
 }
 
 #card:hover {
-  background-color: lightblue;
+  -webkit-box-shadow:inset 0px 0px 0px 10px #f00;
+  -moz-box-shadow:inset 0px 0px 0px 10px #f00;
+  box-shadow:inset 0px 0px 0px 10px #f00;
 }
 
 /* Header */
@@ -52,13 +55,16 @@ body {
   width:100px;
 }
 
+.dividers {
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+}
+
 /* Features */
 .features {
 }
-
 .feature0 {
-  font-family: "ITC Avant Garde Gothic";
-  background-color:GhostWhite;
+  /*background-color:GhostWhite;*/
 }
 .feature1 {
   background:transparent url(/img/hearthstone-bg.jpg) center center;

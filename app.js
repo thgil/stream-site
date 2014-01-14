@@ -51,6 +51,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/webrtc', routes.webrtc);
+app.get('/screencapture', routes.screencapture);
 app.get('/', routes.index);
 
 app.use(function(err, req, res, next){

@@ -13,17 +13,28 @@ block content
   .featurette.header
     .header-blurb
       .container
-        .row
-          h2 1 click for your professional twitch stream
-        // Signup form
-        .row
+        .col-md-5
+          img.img-responsive(src="/img/hearthstone-card.png")
+        .col-md-7
           .form-signup
             form.form-inline(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
               h4.form-signin-heading Join us in our beta. We’re launching soon!
               input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-              input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
+              input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")          
+        // Signup form
   // Features
   .features
+    .featurette.feature9
+      .container
+        .col-md-4
+          h1.featurette-heading ONE CLICK
+          p.lead add your friends to your stream through the browser, no setup required.
+        .col-md-4
+          h1.featurette-heading STREAM FRIENDS
+          p.lead add your friends to your stream through the browser, no setup required.
+        .col-md-4
+          h1.featurette-heading SWITCH GAMES
+          p.leadoo add your friends to your stream through the browser, no setup required.
     .featurette.feature1
       .container
         .col-md-7
@@ -59,7 +70,20 @@ block content
           p.lead
         .col-md-5
           img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-
+    .featurette.feature6
+      .container
+        .col-md-7
+          h1.featurette-heading Choose from community created skins
+          p.lead
+        .col-md-5
+          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+    .featurette.feature7
+      .container
+        .col-md-7
+          h1.featurette-heading Choose from community created skins
+          p.lead
+        .col-md-5
+          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
   //- form.form-horizontal(role="form", action="https://madmimi.com/signups/subscribe/98558", id="mad_mimi_signup_form", method="post", target="_blank")
   //-   .form-group
   //-     .required

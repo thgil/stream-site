@@ -10,90 +10,106 @@ block content
     - }
 
   // Head
-  .featurette.header
-    .header-blurb
-      .container
+  .featurette
+    .container
+      .row
         .col-md-5
-          img.img-responsive(src="/img/hearthstone-card.png")
+          video#localVideo(autoplay="")
+          // replace onmousein/out
+          img#card(src="/img/hearthstone-card.png", onClick="start()")
         .col-md-7
-          .form-signup
-            form.form-inline(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-              h4.form-signin-heading Join us in our beta. We’re launching soon!
-              input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-              input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")          
-        // Signup form
+          form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+            h4.form-signup-heading Join us in our beta. We’re launching soon!
+            input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+            input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit") 
+
   // Features
   .features
-    .featurette.feature9
+    .featurette.feature0
       .container
-        .col-md-4
-          h1.featurette-heading ONE CLICK
-          p.lead add your friends to your stream through the browser, no setup required.
-        .col-md-4
-          h1.featurette-heading STREAM FRIENDS
-          p.lead add your friends to your stream through the browser, no setup required.
-        .col-md-4
-          h1.featurette-heading SWITCH GAMES
-          p.leadoo add your friends to your stream through the browser, no setup required.
+        .row
+          .col-md-4
+            h1.featurette-heading ONE CLICK
+            p.lead add your friends to your stream through the browser, no setup required.
+          .col-md-4
+            h1.featurette-heading STREAM FRIENDS
+            p.lead add your friends to your stream through the browser, no setup required.
+          .col-md-4
+            h1.featurette-heading SWITCH GAMES
+            p.lead add your friends to your stream through the browser, no setup required.
     .featurette.feature1
       .container
-        .col-md-7
-          h1.featurette-heading Instant setup with OBS
-          p.lead or any other broadcast program with an embedded browser (chrome/chromium or firefox)
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/obs-section-bg.png")
+        .row
+          .col-md-7
+            h1.featurette-heading Instant setup with OBS
+            p.lead or any other broadcast program with an embedded browser (chrome/chromium or firefox)
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/obs-section-bg.png")
     .featurette.feature2
       .container
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/stream-with-your-friends.jpg")
-        .col-md-7
-          h1.featurette-heading Stream your friends
-          p.lead add your friends to your stream through the browser, no setup required.
+        .row
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/stream-with-your-friends.jpg")
+          .col-md-7
+            h1.featurette-heading Stream your friends
+            p.lead add your friends to your stream through the browser, no setup required.
     .featurette.feature3
       .container
-        .col-md-7
-          h1.featurette-heading Embedded Twitch chat
-          p.lead and tweets from your Twitter fans.
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+        .row
+          .col-md-7
+            h1.featurette-heading Embedded Twitch chat
+            p.lead and tweets from your Twitter fans.
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
     .featurette.feature4
       .container
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-        .col-md-7
-          h1.featurette-heading Switch from between games seamlessly
-          p.lead using the web interface.
+        .row
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+          .col-md-7
+            h1.featurette-heading Switch from between games seamlessly
+            p.lead using the web interface.
     .featurette.feature5
       .container
-        .col-md-7
-          h1.featurette-heading Choose from community created skins
-          p.lead
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+        .row
+          .col-md-7
+            h1.featurette-heading Choose from community created skins
+            p.lead
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
     .featurette.feature6
       .container
-        .col-md-7
-          h1.featurette-heading Choose from community created skins
-          p.lead
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+        .row
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+          .col-md-7
+            h1.featurette-heading Choose from community created skins
+            p.lead
     .featurette.feature7
       .container
-        .col-md-7
-          h1.featurette-heading Choose from community created skins
-          p.lead
-        .col-md-5
-          img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-  //- form.form-horizontal(role="form", action="https://madmimi.com/signups/subscribe/98558", id="mad_mimi_signup_form", method="post", target="_blank")
-  //-   .form-group
-  //-     .required
-  //-       label.form-control.col-sm-2.control-label(for="signup_email") Email
-  //-       .col-sm-10
-  //-         input#signup_email.required(data-invalid-email="This field is invalid", data-required-field="This field is required", name="signup[email]", placeholder="you@example.com", type="text")
-  //-   .form-group
-  //-     .col-sm-10
-  //-       input#webform_submit_button.submit.btn.btn-default(data-choose-list="&#8593, Choose a list", data-default-text="Subscribe", data-invalid-text="&#8593; You forgot some required fields", data-submitting-text="Sending...", name="commit", type="submit", value="Subscribe")
-    
+        .row
+          .col-md-7
+            h1.featurette-heading Choose from community created skins
+            p.lead
+          .col-md-5
+            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+
+  script.
+
+    var localStream, localPeerConnection, remotePeerConnection;
+
+    var localVideo = document.getElementById("localVideo");
+
+    var start = function() {
+      navigator.getUserMedia = navigator.getUserMedia ||
+      navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+      navigator.getUserMedia({video:true}, gotStream);
+    }
+
+    function gotStream(stream){
+      localVideo.src = URL.createObjectURL(stream);
+      localStream = stream;
+    }
   // /form
 
 //  

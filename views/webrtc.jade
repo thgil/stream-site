@@ -16,15 +16,9 @@ html.no-js
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='css/main.css')
     script(src='http://simplewebrtc.com/latest.js')
     script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
-    style.
-      #remoteVideos video {
-          height: 150px;
-      }
-      #localVideo {
-          height: 150px;
-      }
   body
     //if lt IE 7
       p.chromeframe
@@ -36,9 +30,10 @@ html.no-js
         a(href='http://www.google.com/chromeframe/?redirect=true') activate Google Chrome Frame
         | to improve your experience.
 
-    video#localVideo
+    #card
+      video#localVideo
     br
-    .remoteVideos
+    #remoteVideos
 
     // /container
     script.
@@ -51,12 +46,19 @@ html.no-js
         autoRequestMedia: true
       });
 
-      webrtc.getLocalScreen(); 
-      webrtc.joinRoom('blah');
       // we have to wait until it's ready
       webrtc.on('readyToCall', function () {
-          // you can name it anything
-          webrtc.joinRoom('blah');
+        // you can name it anything
+        webrtc.joinRoom('blah');
+      });
+
+      webrtc.on('peerStreamAdded', function (peer) {
+      });
+
+      // This should get called when sockets emits a new peer joined
+      webrtc.on('videoAdded', function (video, peer) {
+        $(video).wrap("<div id='card'></div>");
+        console.log(peer.videoEl);
       });
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')

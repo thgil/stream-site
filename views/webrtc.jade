@@ -17,7 +17,7 @@ html.no-js
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='css/main.css')
-    script(src='http://simplewebrtc.com/latest.js')
+    script(src='js/latest.js')
     script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
   body
     //if lt IE 7
@@ -29,36 +29,52 @@ html.no-js
         | or
         a(href='http://www.google.com/chromeframe/?redirect=true') activate Google Chrome Frame
         | to improve your experience.
-
-    #card
+    
+    .card
       video#localVideo
     br
     #remoteVideos
-
     // /container
     script.
+      var cards = [];
+
       var webrtc = new SimpleWebRTC({
         // the id/element dom element that will hold "our" video
         localVideoEl: 'localVideo',
         // the id/element dom element that will hold remote videos
         remoteVideosEl: 'remoteVideos',
         // immediately ask for camera access
-        autoRequestMedia: true
+        // disable this for signup page
+        autoRequestMedia: true,
       });
 
       // we have to wait until it's ready
       webrtc.on('readyToCall', function () {
         // you can name it anything
-        webrtc.joinRoom('blah');
+        // this should be randomised for the demo site
+        webrtc.joinRoom('blah'); 
       });
 
+      // this is called before the handlePeerStreamAdded() function
       webrtc.on('peerStreamAdded', function (peer) {
       });
 
-      // This should get called when sockets emits a new peer joined
+      // This gets called when a remote video is added - see handlePeerStreamAdded() function
       webrtc.on('videoAdded', function (video, peer) {
-        $(video).wrap("<div id='card'></div>");
-        console.log(peer.videoEl);
+ 
+        // workaround solution in progress below
+        // just have the cards divs elsewhere and get their postion
+        // then use video style to position the video where the card is
+
+        //$(video).wrap("<div id="+video.id+" class='card'></div>");
+        //- $('#cards').append("<div class='card'></div>")
+        //- $(video).css({position: 'absolute',
+        //-                 top:'20px',
+        //-                 left:'40px',
+        //-                 width: '300px',
+        //-                 'z-index': '-2'
+        //-               });
+        //- cards.push(video);
       });
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')

@@ -47,6 +47,8 @@ html.no-js
         autoRequestMedia: true,
       });
 
+      webrtc.shareScreen();
+
       // we have to wait until it's ready
       webrtc.on('readyToCall', function () {
         // you can name it anything

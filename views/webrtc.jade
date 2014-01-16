@@ -31,8 +31,7 @@ html.no-js
         | to improve your experience.
     
     .card
-      video#localVideo
-    br
+      video#localVideo.smallVideo
     #remoteVideos
     // /container
     script.
@@ -61,20 +60,8 @@ html.no-js
 
       // This gets called when a remote video is added - see handlePeerStreamAdded() function
       webrtc.on('videoAdded', function (video, peer) {
- 
-        // workaround solution in progress below
-        // just have the cards divs elsewhere and get their postion
-        // then use video style to position the video where the card is
-
-        //$(video).wrap("<div id="+video.id+" class='card'></div>");
-        //- $('#cards').append("<div class='card'></div>")
-        //- $(video).css({position: 'absolute',
-        //-                 top:'20px',
-        //-                 left:'40px',
-        //-                 width: '300px',
-        //-                 'z-index': '-2'
-        //-               });
-        //- cards.push(video);
+        $(video).addClass("smallVideo");
+        $(video).parent().addClass("card");
       });
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')

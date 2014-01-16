@@ -61,7 +61,7 @@ html.no-js
       // This gets called when a remote video is added - see handlePeerStreamAdded() function
       webrtc.on('videoAdded', function (video, peer) {
         $(video).addClass("smallVideo");
-        $(video).parent().addClass("card").css({position:'relative', float:'left'});
+        $(video).parent().addClass("card").css({position:'relative'});
       });
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')

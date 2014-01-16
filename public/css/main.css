@@ -23,7 +23,7 @@ body {
 
 .card {
   background-image: url(/img/hearthstone-card.png);
-  
+  float: left;
   width: 379px;
   height: 535px;
 }

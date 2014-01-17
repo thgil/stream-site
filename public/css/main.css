@@ -11,33 +11,49 @@ body {
 
 #remoteVideos {
   position: relative;
+  padding-top: 50px;
 }
 
 .smallVideo {
-  position: absolute;
-  top:20px;
-  left:40px;
-  width: 300px;
-  z-index: -2;
+  position: relative;
+  padding:5% 10% 10%;
+  width: 100%;
+  z-index: -4;
 }
 
 .card {
   background-image: url(/img/hearthstone-card.png);
-  float: left;
+  background-size: 100%;
+  background-repeat: no-repeat;
   width: 379px;
   height: 535px;
 }
 
-#card:hover {
-  -webkit-box-shadow:inset 0px 0px 0px 10px #f00;
-  -moz-box-shadow:inset 0px 0px 0px 10px #f00;
-  box-shadow:inset 0px 0px 0px 10px #f00;
+.smallCard {
+  background-image: url(/img/hearthstone-card.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 450px;
+  width: 300px;
+  float:left;
+}
+
+.card:hover {
+  border-radius: 30px;
+  -webkit-box-shadow: 0 -10px 10px 10px lime;
+  -moz-box-shadow: 0 -10px 10px 10px lime;
+  box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
 }
 
 /* Header */
 .header {
-  background-size: cover;
   min-height:200px;
+}
+
+.header .title {
+  text-align: center;
+  font-family: "Arial Black";
+  font-size: 80px;
 }
 
 /* Signup form */
@@ -46,6 +62,7 @@ body {
 }
 .form-signup-heading
 {
+  min-width:300px;
   margin-bottom: 10px;
 }
 
@@ -78,6 +95,7 @@ body {
   /*background-color:GhostWhite;*/
 }
 .feature1 {
+  position: relative;
   background:transparent url(/img/hearthstone-bg.jpg) center center;
   background-size:cover;
   color:white;

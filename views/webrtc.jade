@@ -17,7 +17,7 @@ html.no-js
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='css/main.css')
-    script(src='js/latest.js')
+    script(src='js/simpleWebRTC.js')
     script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
   body
     //if lt IE 7
@@ -35,8 +35,6 @@ html.no-js
     #remoteVideos
     // /container
     script.
-      var cards = [];
-
       var webrtc = new SimpleWebRTC({
         // the id/element dom element that will hold "our" video
         localVideoEl: 'localVideo',
@@ -46,8 +44,6 @@ html.no-js
         // disable this for signup page
         autoRequestMedia: true,
       });
-
-      webrtc.shareScreen();
 
       // we have to wait until it's ready
       webrtc.on('readyToCall', function () {

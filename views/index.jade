@@ -14,14 +14,19 @@ block content
     .container
       .row
         .col-md-5
-          video#localVideo(autoplay="")
-          // replace onmousein/out
-          img#card(src="/img/hearthstone-card.png", onClick="start()")
+          .card(onClick="start()")
+            video#localVideo.smallVideo(autoplay="")
         .col-md-7
-          form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-            h4.form-signup-heading Join us in our beta. We’re launching soon!
-            input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-            input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit") 
+          .row
+            .title OVERTWIT.CH
+          .row
+            form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+              h4.form-signup-heading Join us in our beta. We’re launching soon!
+              input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+              input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
+          .row
+            #remoteVideos
+
 
   // Features
   .features
@@ -97,22 +102,47 @@ block content
           .col-md-5
             img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
 
+  script(src='js/simpleWebRTC.js')
   script.
 
-    var localStream, localPeerConnection, remotePeerConnection;
+    //- console.log( $(document).getUrlParam('id') );
 
-    var localVideo = document.getElementById("localVideo");
+    //- // random name
+    //- var room =  $(document).getUrlParam('id') || (Math.random() + 1).toString(36).substring(7);
 
-    var start = function() {
-      navigator.getUserMedia = navigator.getUserMedia ||
-      navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-      navigator.getUserMedia({video:true}, gotStream);
-    }
+    //- console.log('room',room);
+  
+    var webrtc = new SimpleWebRTC({
+        // the id/element dom element that will hold "our" video
+        localVideoEl: 'localVideo',
+        // the id/element dom element that will hold remote videos
+        remoteVideosEl: 'remoteVideos',
+        // immediately ask for camera access
+        // disable this for signup page
+        autoRequestMedia: false,
+      });
 
-    function gotStream(stream){
-      localVideo.src = URL.createObjectURL(stream);
-      localStream = stream;
-    }
+      // we have to wait until it's ready
+      webrtc.on('readyToCall', function () {
+        // you can name it anything
+        // this should be randomised for the demo site
+        webrtc.joinRoom('blah'); 
+      });
+
+      // this is called before the handlePeerStreamAdded() function
+      webrtc.on('peerStreamAdded', function (peer) {
+      });
+
+      // This gets called when a remote video is added - see handlePeerStreamAdded() function
+      webrtc.on('videoAdded', function (video, peer) {
+        $(video).parent().addClass("smallCard");
+        $(video).addClass("smallVideo");
+      });
+
+      var start = function() {
+        webrtc.startLocalVideo();
+      }
+
   // /form
 
 //  

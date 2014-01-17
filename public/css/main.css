@@ -18,50 +18,43 @@ body {
   z-index: -4;
 }
 
+.cards {
+  position: relative;
+  width:100%;
+}
+
 div.card {
   margin: 0 auto;
   width: 370px;
   height: 526px;
+  margin-top: 40px;
 }
 
 div.card video {
   position: absolute;
-  padding:5% 10% 10%;
-  width: 100%;
-  z-index: -4;
+  width: 370px;
+  z-index: 1;
 }
 
-div.img {
+div.card img {
   position: relative;
   width: 100%;
 }
 
-<<<<<<< HEAD
-div.card:hover {
+.card:hover {
   cursor: pointer;
-=======
-.card {
-/*  background-size: contain;
-  background-repeat: no-repeat;*/
-  width: 379px;
-  height: 535px;
-  margin: 0 auto;
-}
-
-/*.card:hover {
->>>>>>> 0f78d339ed13f0ba3768875016c49ebee2726e7a
   border-radius: 30px;
   -webkit-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
   -moz-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
   box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
-}*/
+}
 
 /* Header */
 .header {
+  height: 500px;
   background:transparent url(/img/hearthstone-bg.jpg) center center;
   background-size: cover;
   padding-top: 50px;
-  padding-bottom: 50px;
   text-align: center;
 }
 

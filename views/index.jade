@@ -6,22 +6,11 @@ block content
   .header
     .container
       .row
-        .card(onClick="start()")
-          video#localVideo.smallVideo(autoplay="")
-<<<<<<< HEAD
-          img(src="/img/hearthstone-final-try-me.png", onClick="start()")
-      .row
-        form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-          h4.form-signup-heading Join us in our beta. We’re launching soon!
-          input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-          input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
-      .row
+        .cards
+          .card(onClick="start()")
+            img(src="/img/hearthstone-final-try-me.png")
+            video#localVideo
         #remoteVideos
-=======
-          // replace onmousein/out
-          img(src="/img/hearthstone-final-try-me.png", onClick="start()")
->>>>>>> 0f78d339ed13f0ba3768875016c49ebee2726e7a
-
 
 
   .container
@@ -114,7 +103,7 @@ block content
 
       // This gets called when a remote video is added - see handlePeerStreamAdded() function
       webrtc.on('videoAdded', function (video, peer) {
-        $(video).parent().addClass("smallCard");
+        $(video).parent().addClass("card");
         $(video).parent().append("<img src='/img/hearthstone-card.png'></img>");
         $(video).parent().css("left","1000px");
         $(video).parent().animate({

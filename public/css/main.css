@@ -19,20 +19,19 @@ body {
 }
 
 .card {
-  /*margin: 0 auto;*/
-  background-color: red;
   width: 370px;
   height: 526px;
   z-index: 100;
 }
 
-div.card video {
+.card video {
+  margin: 10px 20px 20px;
   position: absolute;
-  width: 370px;
+  width: 320px;
   z-index: 99;
 }
 
-div.card img {
+.card img {
   position: relative;
   width: 100%;
   z-index: 100;

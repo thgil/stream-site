@@ -40,18 +40,19 @@ div.smallCard img {
 }
 
 .card {
-  background-size: contain;
-  background-repeat: no-repeat;
+/*  background-size: contain;
+  background-repeat: no-repeat;*/
   width: 379px;
   height: 535px;
+  margin: 0 auto;
 }
 
-.card:hover {
+/*.card:hover {
   border-radius: 30px;
   -webkit-box-shadow: 0 -10px 10px 10px lime;
   -moz-box-shadow: 0 -10px 10px 10px lime;
   box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
-}
+}*/
 
 /* Header */
 .header {

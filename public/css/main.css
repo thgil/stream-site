@@ -32,15 +32,15 @@ div.card video {
 }
 
 div.img {
-   position: relative;
+  position: relative;
   width: 100%;
 }
 
 div.card:hover {
   cursor: pointer;
   border-radius: 30px;
-  -webkit-box-shadow: 0 -10px 10px 10px lime;
-  -moz-box-shadow: 0 -10px 10px 10px lime;
+  -webkit-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
+  -moz-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
   box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
 }
 

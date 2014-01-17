@@ -6,68 +6,43 @@ block content
   .header
     .container
       .row
-        .center-block
-          .card(onClick="start()")
-            video#localVideo
-            img(src="/img/hearthstone-final-click-me-sharp-text.png")
-        #remoteVideos
-
-  .container
-    .row
-      form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-        h4.form-signup-heading Join us in our beta. We’re launching soon!
-        input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-        input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
+        .card(onClick="start()").center-block
+          video#localVideo
+          img(src="/img/hearthstone-final-click-me-sharp-text.png")
+        //- #remoteVideos
 
   // Features
   .features
-    .featurette.feature0
-      .container
-        .row
-          .col-md-4
-            h1.featurette-heading ONE CLICK
-            p.lead.text-muted add your friends to your stream through the browser, no setup required.
-            a.btn.btn-default(href="#",role="button") Learn more »
-          .col-md-4.dividers
-            h1.featurette-heading STREAM FRIENDS
-            p.lead.text-muted add your friends to your stream through the browser, no setup required.
-            a.btn.btn-default(href="#",role="button") Learn more »
-          .col-md-4
-            h1.featurette-heading SWITCH GAMES
-            p.lead.text-muted add your friends to your stream through the browser, no setup required.
-            a.btn.btn-default(href="#",role="button") Learn more »
-    .featurette.feature1
-      .container
-        .row
-          .col-md-7
-            h1.featurette-heading Instant setup with OBS
-            p.lead or any other broadcast program with an embedded browser (chrome/chromium or firefox)
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/obs-section-bg.png")
     .featurette.feature2
       .container
         .row
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="/img/stream-with-your-friends.jpg")
-          .col-md-7
-            h1.featurette-heading Stream your friends
-            p.lead add your friends to your stream through the browser, no setup required.
-    .featurette.feature3
-      .container
-        .row
-          .col-md-7
-            h1.featurette-heading Embedded Twitch chat
-            p.lead and tweets from your Twitter fans.
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
+          .blah.center-block
+            form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+              h4.form-signup-heading Join us in our beta. We’re launching soon!
+              input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+              input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
+
+  .features
     .featurette.feature4
       .container
         .row
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-          .col-md-7
-            h1.featurette-heading Switch from between games seamlessly
-            p.lead using the web interface.
+          .col-md-4
+            h1.featurette-heading STREAM FRIENDS
+            p.lead.text-muted 
+              | add your friends to your stream 
+              | through the browser, no setup required.
+            a.btn.btn-default(href="#",role="button") Learn more »
+          .col-md-4.dividers
+            h1.featurette-heading ONE CLICK
+            p.lead.text-muted 
+              | Instant setup with OBS or any other broadcast
+              | program with an embedded browser. 
+              | Add your friends to your stream through the browser, no setup required.
+            a.btn.btn-default(href="#",role="button") Learn more »
+          .col-md-4
+            h1.featurette-heading MULTIPLE GAMES
+            p.lead.text-muted Switch from between games seamlessly using the web interface.
+            a.btn.btn-default(href="#",role="button") Learn more »
 
   script(src='js/simpleWebRTC.js')
   script.

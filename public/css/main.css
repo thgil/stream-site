@@ -18,11 +18,11 @@ body {
   z-index: -4;
 }
 
-div.card {
-  margin: 0 auto;
+.card {
+  /*margin: 0 auto;*/
+  background-color: red;
   width: 370px;
   height: 526px;
-  margin-top: 40px;
   z-index: 100;
 }
 
@@ -51,7 +51,7 @@ div.card img {
   height: 500px;
   background:transparent url(/img/hearthstone-bg.jpg) center center;
   background-size: cover;
-  padding-top: 50px;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -67,6 +67,11 @@ div.card img {
   text-shadow: 2px 2px black;
   margin: 0 auto;
 }
+
+.blah {
+  width: 600px;
+}
+
 .form-signup-heading
 {
   min-width:300px;
@@ -99,8 +104,8 @@ div.card img {
 /* Features */
 .features {
 }
-.feature0 {
-  /*background-color:GhostWhite;*/
+/*.feature0 {
+  background-color:GhostWhite;
 }
 .feature1 {
   position: relative;
@@ -108,8 +113,10 @@ div.card img {
   background-size:cover;
   color:white;
   text-shadow: 2px 2px black;
-}
+}*/
 .feature2 {
+  margin-top: 30px;
+  background-color: Silver;
 }
 .feature3 {
   background:transparent url(/img/tf2-bg.jpg) center center;
@@ -118,6 +125,7 @@ div.card img {
   text-shadow: 2px 2px black;
 }
 .feature4 {
+  background-color: GhostWhite;
 }
 .feature5 {
   background:transparent url(/img/dota2-bg.jpg) center center;

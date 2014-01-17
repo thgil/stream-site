@@ -10,8 +10,9 @@ body {
 }
 
 #remoteVideos {
+  overflow: hidden;
   position: relative;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .smallVideo {
@@ -22,8 +23,10 @@ body {
 }
 
 div.smallCard {
+  display: inline-block;
   position: relative;
   width: 200px;
+  max-height: 300px;
   float:left;
 }
 

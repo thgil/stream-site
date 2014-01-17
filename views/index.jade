@@ -137,6 +137,13 @@ block content
       webrtc.on('videoAdded', function (video, peer) {
         $(video).parent().addClass("smallCard");
         $(video).parent().append("<img src='/img/hearthstone-card.png'></img>");
+        $(video).parent().css("left","1000px");
+        $(video).parent().animate({
+            left: 0,
+          }, {
+            duration: 500,
+            specialEasing: "easeOutBounce"
+          });
         //$(video).addClass("smallVideo");
       });
 

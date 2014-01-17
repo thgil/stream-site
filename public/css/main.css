@@ -11,14 +11,7 @@ body {
   padding-top: 20px;
 }
 
-.smallVideo {
-  position: relative;
-  padding:5% 10% 10%;
-  width: 100%;
-  z-index: -4;
-}
-
-div.card {
+.card {
   margin: 0 auto;
   width: 370px;
   height: 526px;
@@ -26,13 +19,14 @@ div.card {
   z-index: 100;
 }
 
-div.card video {
+.card video {
+  margin: 10px 20px 20px;
   position: absolute;
-  width: 370px;
+  width: 320px;
   z-index: 99;
 }
 
-div.card img {
+.card img {
   position: relative;
   width: 100%;
   z-index: 100;

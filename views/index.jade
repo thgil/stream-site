@@ -136,7 +136,8 @@ block content
       // This gets called when a remote video is added - see handlePeerStreamAdded() function
       webrtc.on('videoAdded', function (video, peer) {
         $(video).parent().addClass("smallCard");
-        $(video).addClass("smallVideo");
+        $(video).parent().append("<img src='/img/hearthstone-card.png'></img>");
+        //$(video).addClass("smallVideo");
       });
 
       var start = function() {

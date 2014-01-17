@@ -21,21 +21,30 @@ body {
   z-index: -4;
 }
 
+div.smallCard {
+  position: relative;
+  width: 200px;
+  float:left;
+}
+
+div.smallCard video {
+  position: absolute;
+  padding:5% 10% 10%;
+  width: 100%;
+  z-index: -4;
+}
+
+div.smallCard img {
+  position: relative;
+  width: 100%;
+}
+
 .card {
   background-image: url(/img/hearthstone-card.png);
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   width: 379px;
   height: 535px;
-}
-
-.smallCard {
-  background-image: url(/img/hearthstone-card.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 450px;
-  width: 300px;
-  float:left;
 }
 
 .card:hover {

@@ -1,7 +1,4 @@
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  /*color: #5a5a5a;*/ 
   font-family: "ITC Avant Garde Gothic";
 }
 
@@ -40,7 +37,6 @@ div.smallCard img {
 }
 
 .card {
-  background-image: url(/img/hearthstone-card.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 379px;
@@ -56,7 +52,10 @@ div.smallCard img {
 
 /* Header */
 .header {
+  background:transparent url(/img/hearthstone-bg.jpg) center center;
+  background-size: cover;
   min-height:200px;
+  padding-bottom: 100px;
 }
 
 .header .title {
@@ -153,11 +152,6 @@ div.smallCard img {
 .featurette-heading {
   font-weight: 200;
   line-height: 1;
-}
-
-.leadoo {
-  font-family: "ITC Avant Garde Gothic lt";
-  /*font-weight: 700;*/
 }
 
 @media (max-width: 768px) { 

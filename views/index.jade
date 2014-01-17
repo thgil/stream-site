@@ -8,6 +8,7 @@ block content
       .row
         .card(onClick="start()")
           video#localVideo.smallVideo(autoplay="")
+<<<<<<< HEAD
           img(src="/img/hearthstone-final-try-me.png", onClick="start()")
       .row
         form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
@@ -16,7 +17,19 @@ block content
           input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
       .row
         #remoteVideos
+=======
+          // replace onmousein/out
+          img(src="/img/hearthstone-final-try-me.png", onClick="start()")
+>>>>>>> 0f78d339ed13f0ba3768875016c49ebee2726e7a
 
+
+
+  .container
+    .row
+      form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+        h4.form-signup-heading Join us in our beta. We’re launching soon!
+        input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+        input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
 
   // Features
   .features
@@ -67,30 +80,6 @@ block content
           .col-md-7
             h1.featurette-heading Switch from between games seamlessly
             p.lead using the web interface.
-    .featurette.feature5
-      .container
-        .row
-          .col-md-7
-            h1.featurette-heading Choose from community created skins
-            p.lead
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-    .featurette.feature6
-      .container
-        .row
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
-          .col-md-7
-            h1.featurette-heading Choose from community created skins
-            p.lead
-    .featurette.feature7
-      .container
-        .row
-          .col-md-7
-            h1.featurette-heading Choose from community created skins
-            p.lead
-          .col-md-5
-            img.featurette-image.img-responsive.featurette-img( alt="320x320", src="http://placehold.it/320x320")
 
   script(src='js/simpleWebRTC.js')
   script.
@@ -140,11 +129,3 @@ block content
       var start = function() {
         webrtc.startLocalVideo();
       }
-
-  // /form
-
-//  
-  .border
-    .webcam
-      | <iframe width="100%" height="100%" src="https://apprtc.appspot.com/?r=79067713"></iframe>
-

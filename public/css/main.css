@@ -36,13 +36,25 @@ div.img {
   width: 100%;
 }
 
+<<<<<<< HEAD
 div.card:hover {
   cursor: pointer;
+=======
+.card {
+/*  background-size: contain;
+  background-repeat: no-repeat;*/
+  width: 379px;
+  height: 535px;
+  margin: 0 auto;
+}
+
+/*.card:hover {
+>>>>>>> 0f78d339ed13f0ba3768875016c49ebee2726e7a
   border-radius: 30px;
   -webkit-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
   -moz-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
   box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
-}
+}*/
 
 /* Header */
 .header {

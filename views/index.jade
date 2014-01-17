@@ -1,33 +1,21 @@
 extends layout
 
 block content
-  // We only expect one message so this is okay to do without a for loop.
-  if hasMessages
-    - for (var i = 0; i < messages.length; i++) {
-      div.alert(class='#{messages[i].type}')
-        ul
-            li #{messages[i].message}
-    - }
 
   // Head
   .header
     .container
       .row
-        .col-md-5
-          .card(onClick="start()")
-            video#localVideo.smallVideo(autoplay="")
-          // replace onmousein/out
-          img#card(src="/img/hearthstone-final-try-me.png", onClick="start()")
-        .col-md-7
-          .row
-            .title OVERTWIT.CH
-          .row
-            form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-              h4.form-signup-heading Join us in our beta. We’re launching soon!
-              input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-              input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
-          .row
-            #remoteVideos
+        .card(onClick="start()")
+          video#localVideo.smallVideo(autoplay="")
+          img(src="/img/hearthstone-final-try-me.png", onClick="start()")
+      .row
+        form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+          h4.form-signup-heading Join us in our beta. We’re launching soon!
+          input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+          input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
+      .row
+        #remoteVideos
 
 
   // Features

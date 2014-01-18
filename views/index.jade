@@ -6,21 +6,20 @@ block content
   .header
     .container
       .row
-        .card(onClick="start()").center-block
-          video#localVideo
-          img(src="/img/hearthstone-final-click-me-sharp-text.png")
-        #remoteVideos
+        .cards
+          .card(onClick="start()")
+            video#localVideo
+            img(src="/img/hearthstone-final-click-me-sharp-text.png")
+          #remoteVideos
 
-  // Features
-  .features
-    .featurette.feature2
-      .container
-        .row
-          .blah.center-block
-            form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-              h4.form-signup-heading Join us in our beta. We’re launching soon!
-              input.form-control.pull-left(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-              input.btn.btn-lg.btn-success.pull-left(type="submit", value="Sign Up" , name="commit")
+  .container
+    .row
+      #shareRoom
+    .row
+      form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+        h4.form-signup-heading Join us in our beta. We’re launching soon!
+        input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
+        input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
 
   .features
     .featurette.feature4
@@ -43,52 +42,4 @@ block content
             h1.featurette-heading MULTIPLE GAMES
             p.lead.text-muted Switch from between games seamlessly using the web interface.
             a.btn.btn-default(href="#",role="button") Learn more »
-
-  script(src='js/simpleWebRTC.js')
-  script.
-
-    //- console.log( $(document).getUrlParam('id') );
-
-    //- // random name
-    //- var room =  $(document).getUrlParam('id') || (Math.random() + 1).toString(36).substring(7);
-
-    //- console.log('room',room);
   
-    var webrtc = new SimpleWebRTC({
-        // the id/element dom element that will hold "our" video
-        localVideoEl: 'localVideo',
-        // the id/element dom element that will hold remote videos
-        remoteVideosEl: 'remoteVideos',
-        // immediately ask for camera access
-        // disable this for signup page
-        autoRequestMedia: false,
-      });
-
-      // we have to wait until it's ready
-      webrtc.on('readyToCall', function () {
-        // you can name it anything
-        // this should be randomised for the demo site
-        webrtc.joinRoom('blah'); 
-      });
-
-      // this is called before the handlePeerStreamAdded() function
-      webrtc.on('peerStreamAdded', function (peer) {
-      });
-
-      // This gets called when a remote video is added - see handlePeerStreamAdded() function
-      webrtc.on('videoAdded', function (video, peer) {
-        $(video).parent().addClass("card");
-        $(video).parent().append("<img src='/img/hearthstone-card.png'></img>");
-        $(video).parent().css("left","1000px");
-        $(video).parent().animate({
-            left: 0,
-          }, {
-            duration: 500,
-            specialEasing: "easeOutBounce"
-          });
-        //$(video).addClass("smallVideo");
-      });
-
-      var start = function() {
-        webrtc.startLocalVideo();
-      }

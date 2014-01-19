@@ -28,8 +28,6 @@ app.use(express.session());
 
 // Message middleware so we can do flash messages
 app.use(function(req, res, next){
-  console.log("1 ",req.session);
-
   var msgs = req.session.messages || [];
 
   // empty or "flush" the messages so they don't build up
@@ -52,6 +50,7 @@ if ('development' == app.get('env')) {
 
 app.get('/webrtc', routes.webrtc);
 app.get('/screencapture', routes.screencapture);
+app.get('/:room', routes.room);
 app.get('/', routes.index);
 
 app.use(function(err, req, res, next){

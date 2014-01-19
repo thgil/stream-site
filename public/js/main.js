@@ -1,17 +1,3 @@
-
-var urlParam = function(name){
-    var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-    return results ? results[1] : false;
-}
-var m = Math.random() + 1;
-console.log(m);
-console.log((m).toString(36));
-console.log((m).toString(36).substring(2) );
-
-var room =  urlParam('room') || (Math.random() + 1).toString(36).substring(2,7);
-
-console.log('room',room);
-
 var webrtc = new SimpleWebRTC({
   // the id/element dom element that will hold "our" video
   localVideoEl: 'localVideo',

@@ -68,7 +68,7 @@ body {
 .form-signup {
   width:400px;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .form-signup .form-signup-heading
@@ -104,8 +104,10 @@ body {
 /* Features */
 .features {
 }
-/*.feature0 {
-  background-color:GhostWhite;
+.feature0 {
+   padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: ghostwhite;
 }
 .feature1 {
   position: relative;
@@ -113,7 +115,7 @@ body {
   background-size:cover;
   color:white;
   text-shadow: 2px 2px black;
-}*/
+}
 .feature2 {
   margin-top: 30px;
   background-color: Silver;

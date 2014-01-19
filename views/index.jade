@@ -1,7 +1,6 @@
 extends layout
 
 block content
-
   // Head
   .header
     .container
@@ -22,7 +21,7 @@ block content
         input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
 
   .features
-    .featurette.feature4
+    .feature0
       .container
         .row
           .col-md-4
@@ -42,4 +41,5 @@ block content
             h1.featurette-heading MULTIPLE GAMES
             p.lead.text-muted Switch from between games seamlessly using the web interface.
             a.btn.btn-default(href="#",role="button") Learn more »
-  
+  script.
+    var room = '#{room}';

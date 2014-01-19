@@ -6,19 +6,23 @@ block content
     .container
       .row
         .cards
-          .card(onClick="start()")
+          .card#main-card(onClick="start()")
+            .cardText
+              h3 Let your friends join and leave your live stream with a single click.
             video#localVideo
-            img(src="/img/hearthstone-final-click-me-sharp-text.png")
+            img#localImage(src="/img/hearthstone-click-me-no-text.png")
           #remoteVideos
 
-  .container
-    .row
-      #shareRoom
-    .row
-      form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-        h4.form-signup-heading Join us in our beta. We’re launching soon!
-        input.form-control(type="email", placeholder="Email address", name="signup[email]", required="", autofocus="")
-        input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
+  .features
+    .main-feature
+      .container
+        .row
+          h1.title Stream with your friends using Overtwit!
+        .row
+          form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
+            h4.form-signup-heading Join us in our beta. We’re launching soon!
+            input.form-control(type="email", placeholder="Email address", name="signup[email]", required="")
+            input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
 
   .features
     .feature0

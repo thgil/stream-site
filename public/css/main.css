@@ -1,25 +1,26 @@
+/* Header */
+.header {
+  height: 500px;
+  min-width: 400px;
+  background:transparent url(/img/hearthstone-bg.jpg) center center;
+  background-size: cover;
+  padding-top: 20px;
+  text-align: center;
+}
+/* End of header */
+
 body {
   font-family: "ITC Avant Garde Gothic";
 }
 
-#localVideo {
-}
-
-#remoteVideos {
-  display:inline-block;
-}
-
-#shareRoom {
-  margin-top: 50px;
-  text-align: center;
-}
-
 .cards {
-  white-space:nowrap;
+  /*white-space:nowrap;*/
   width: 100%;
 }
 
+/* The card */
 .card {
+  position: relative;
   display:inline-block;
   width: 370px;
   height: 526px;
@@ -40,29 +41,44 @@ body {
   z-index: 100;
 }
 
+.card h3 {
+  font-size: 26px;
+  letter-spacing: 0.8px;
+  font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.cardText {
+  position: absolute;
+  top: 345px;
+  left: 50px;
+  width: 270px;
+  z-index: 101;
+  text-align: center;
+  white-space: normal;
+}
+
 .card:hover {
   cursor: pointer;
   border-radius: 30px;
-  -webkit-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
-  -moz-box-shadow: 0 -10px 10px 10px lime, inset 0 5px 20px 4px lime;
-  box-shadow: 0 -5px 20px 5px lime, inset 0 5px 20px 4px lime;
+  -webkit-box-shadow: 18px 18px 25px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    18px 18px 25px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         18px 18px 25px 0px rgba(50, 50, 50, 0.75);
+}
+/* End of card */
+
+/* WebRTC ids */
+#localVideo {
 }
 
-/* Header */
-.header {
-  height: 500px;
-  min-width: 400px;
-  background:transparent url(/img/hearthstone-bg.jpg) center center;
-  background-size: cover;
-  padding-top: 20px;
-  text-align: center;
+#remoteVideos {
+  display:inline-block;
 }
 
-.header .title {
+#shareRoom {
+  margin-top: 50px;
   text-align: center;
-  font-family: "Arial Black";
-  font-size: 80px;
 }
+/* End of webrtc */
 
 /* Signup form */
 .form-signup {
@@ -95,6 +111,21 @@ body {
   display: inline-block;
   width:100px;
 }
+/* End of signup form */
+
+
+.main-feature {
+  height: auto;
+  /*background-size:cover;*/
+  /*color:white;*/
+  /*text-shadow: 2px 2px black;*/
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 200;
+}
 
 .dividers {
   border-left: 1px solid #e3e3e3;
@@ -108,55 +139,6 @@ body {
    padding-top: 30px;
   padding-bottom: 30px;
   background-color: ghostwhite;
-}
-.feature1 {
-  position: relative;
-  background:transparent url(/img/hearthstone-bg.jpg) center center;
-  background-size:cover;
-  color:white;
-  text-shadow: 2px 2px black;
-}
-.feature2 {
-  margin-top: 30px;
-  background-color: Silver;
-}
-.feature3 {
-  background:transparent url(/img/tf2-bg.jpg) center center;
-  background-size:cover;
-  color:white;
-  text-shadow: 2px 2px black;
-}
-.feature4 {
-  background-color: GhostWhite;
-}
-.feature5 {
-  background:transparent url(/img/dota2-bg.jpg) center center;
-  background-size:cover;
-  color:white;
-  text-shadow: 2px 2px black;
-}
-.feature6 {
-}
-.feature7 {
-  background:transparent url(/img/starcraft-2-desat.jpg) center center;
-  background-size:cover;
-  color:white;
-  text-shadow: 2px 2px black;
-}
-
-.featurette {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  height: auto;
-}
-
-.featurette-img {
-  max-height: 320px;
-}
-
-.featurette-divider {
-  margin: 20px 0; /* Space out the Bootstrap <hr> more */
-}
 
 /* Thin out the marketing headings */
 .featurette-heading {
@@ -164,33 +146,6 @@ body {
   line-height: 1;
 }
 
-/*@media (max-width: 768px) { 
-  .form-signup {
-    margin: 0 auto;
-    min-width: 380px;
-  }
-  .form-signup-heading
-  {
-    margin-bottom: 10px;
-  }
-
-  .form-signup .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-  }
-  .form-signup .form-control:focus {
-    z-index: 2;
-  }
-  .form-signup input[type="email"] {
-    width: 270px;
-    margin-right:10px;
-  }
-  .form-signup input[type="submit"] {
-    width:100px;
-  }
-}*/
 
 @media (max-width: 988px) {
 

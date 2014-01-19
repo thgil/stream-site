@@ -113,6 +113,13 @@ body {
 }
 /* End of signup form */
 
+/* Features */
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: auto;
+  /*background-color: GhostWhite;*/
+}
 
 .main-feature {
   height: auto;
@@ -131,14 +138,6 @@ body {
   border-left: 1px solid #e3e3e3;
   border-right: 1px solid #e3e3e3;
 }
-
-/* Features */
-.features {
-}
-.feature0 {
-   padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: ghostwhite;
 
 /* Thin out the marketing headings */
 .featurette-heading {

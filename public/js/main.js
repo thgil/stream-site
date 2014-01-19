@@ -27,6 +27,7 @@ webrtc.on('readyToCall', function () {
   // you can name it anything
   // this should be randomised for the demo site
   webrtc.joinRoom(room);
+  // html content in a variable?
   // var cont = '<a href="'+window.location.host+'?room='+room+'">'+window.location.host+'?room='+room+'</a>';
   $("#localImage").popover({ title: 'Add a friend!', content: 'Share link should go here. Also need to change the css styling for this.', placement: 'left', trigger: 'manual' });
   $("#localImage").popover('show');

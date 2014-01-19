@@ -78,10 +78,6 @@ body {
   margin-top: 50px;
   text-align: center;
 }
-
-/*#room-link {
-  position: absolute;
-}*/
 /* End of webrtc */
 
 /* Signup form */
@@ -126,6 +122,7 @@ body {
 }
 
 .main-feature {
+  height: auto;
   /*background-size:cover;*/
   /*color:white;*/
   /*text-shadow: 2px 2px black;*/

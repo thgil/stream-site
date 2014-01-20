@@ -30,7 +30,7 @@ webrtc.on('readyToCall', function () {
   webrtc.joinRoom(room);
   $("#localImage").popover({ 
     html: true, 
-    content: '<h4>Let your friends join your stream. Simply share this link: </h4><input onclick="this.select();" class="form-control input-lg" id="justatest" type="text" value=""/>', 
+    content: '<h4>Let your friends join your stream. Simply share this link: </h4><input onclick="this.select();" class="form-control input-lg" id="justatest" type="text" value="" readonly/>', 
     placement: 'left', 
     trigger: 'manual' });
   $("#localImage").popover('show');

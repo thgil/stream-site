@@ -51,6 +51,10 @@ body {
   font-weight: 200;
 }
 
+.card input[readonly] {
+  cursor: pointer;
+}
+
 .cardText {
   position: absolute;
   top: 345px;

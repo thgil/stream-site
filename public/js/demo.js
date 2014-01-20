@@ -13,26 +13,39 @@ if (autoplay) {
   document.getElementById('localImage').src = "/img/hearthstone-blank-no-text.png";  
 }
 
-var webrtc = new SimpleWebRTC({
+var simplewebrtc = new SimpleWebRTC({
   // the id/element dom element that will hold "our" video
   localVideoEl: 'localVideo',
   // the id/element dom element that will hold remote videos
   remoteVideosEl: 'remoteVideos',
   // immediately ask for camera access
   // disable this for signup page
-  autoRequestMedia: autoplay
+  autoRequestMedia: autoplay,
+  debug: true
 });
 
+
+
+simplewebrtc.connection.on('message', function (message) {
+  //console.log(message.payload);
+  if(message.type == 'position') {
+    var position = message.payload;
+    $("#draggable").css({left:position.left, top:position.top});
+  }
+});
+
+
+
 // we have to wait until it's ready
-webrtc.on('readyToCall', function () {
-  console.log(room);
+simplewebrtc.on('readyToCall', function () {
   // you can name it anything
   // this should be randomised for the demo site
-  webrtc.joinRoom(room);
+  simplewebrtc.joinRoom(room);
+
 
   $("#localImage").popover({ 
     html: true, 
-    content: '<h4>Let your friends join your stream. Simply share this link: </h4><input onclick="this.select();" class="form-control input-lg" id="justatest" type="text" value="" readonly/>', 
+    content: '<h4>Let your friends join your stream. Simply share this link: </h4><input onclick="this.select();" class="form-control input-lg" id="justatest" type="text" value=""/>', 
     placement: 'left', 
     trigger: 'manual' });
 
@@ -42,7 +55,8 @@ webrtc.on('readyToCall', function () {
 });
 
 // This gets called when a remote video is added - see handlePeerStreamAdded() function
-webrtc.on('videoAdded', function (video, peer) {
+simplewebrtc.on('videoAdded', function (video, peer) {
+
   $("#localImage").popover('hide');
   $(video).parent().addClass("card");
   $(video).parent().append("<img src='/img/hearthstone-blank-no-text.png'></img>");
@@ -56,5 +70,20 @@ webrtc.on('videoAdded', function (video, peer) {
 var start = function() {
   document.getElementById('localImage').src = "/img/hearthstone-blank-no-text.png";
   document.getElementById('main-card').onclick = '';
-  webrtc.startLocalVideo();
+  //simplewebrtc.startLocalVideo();
 }
+
+$(function() {
+
+  $( "#draggable" ).draggable({
+    drag: function( event, ui ) {
+      simplewebrtc.webrtc.sendToAll('position', ui.position );
+    },
+    stop: function( event, ui ) {
+      simplewebrtc.webrtc.sendToAll('position', ui.position );
+    }
+  });
+});
+
+
+

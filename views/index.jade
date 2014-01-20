@@ -51,6 +51,15 @@ block content
             h1.featurette-heading MULTIPLE GAMES
             p.lead.text-muted Switch between games seamlessly using the web interface.
 
+block scripts
   script.
     var room = '#{room}';
     var autoplay = '#{autoplay}';
+
+    $( "form" ).submit(function() {
+      ga('set', 'dimension1', 1);
+    });
+
+  script(src='/js/vendor/bootstrap.min.js')
+  script(src='/js/simpleWebRTC.js')
+  script(src='/js/main.js')

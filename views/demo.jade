@@ -1,0 +1,29 @@
+extends layout
+
+block content 
+  body
+    div(id="draggable", class="ui-widget-content")
+      .cards
+        .card#main-card(onClick="start()")
+          .cardText
+            h3 Let your friends join and leave your live stream with a single click.
+          video#localVideo
+          img#localImage(src="/img/hearthstone-click-me-no-text.png")
+        #remoteVideos
+
+    script.
+      var room = '#{room}';
+      var autoplay = '#{autoplay}';
+
+    link(rel="stylesheet", href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css")
+    script(src="http://code.jquery.com/ui/1.10.4/jquery-ui.js")
+
+    style.
+      #draggable { 
+        border:0px; 
+      }
+
+block scripts
+  script(src='/js/vendor/bootstrap.min.js')
+  script(src='/js/simpleWebRTC.js')
+  script(src='/js/demo.js')

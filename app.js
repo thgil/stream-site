@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var demo = require('./routes/demo')
 
 var app = express();
 
@@ -50,6 +51,10 @@ if ('development' == app.get('env')) {
 
 app.get('/webrtc', routes.webrtc);
 app.get('/screencapture', routes.screencapture);
+
+app.get('/demo/:room', demo.room);
+app.get('/demo', demo.index);
+
 app.get('/:room', routes.room);
 app.get('/', routes.index);
 

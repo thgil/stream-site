@@ -17,34 +17,39 @@ block content
     .main-feature
       .container
         .row
-          h1.title Stream with your friends using Overtwit!
+          h1.title.text-center Stream with your friends using Overtwit.
         .row
-          form.form-inline.form-signup(role="form", action="https://madmimi.com/signups/subscribe/98558", method="post", target="_blank")
-            h4.form-signup-heading Join us in our beta. We’re launching soon!
-            input.form-control(type="email", placeholder="Email address", name="signup[email]", required="")
-            input.btn.btn-lg.btn-success(type="submit", value="Sign Up" , name="commit")
+          h3.form-signup-heading.text-center Join us in our beta. We’re launching soon (it's going to be awesome)!
+        .row
+          .form-signup.text-center
+            form.form-inline(role="form", 
+                             action="https://madmimi.com/signups/subscribe/98558", 
+                             method="post", 
+                             target="_blank")
+              .form-group
+                .col-md-12
+                  input.input-lg(type="email", 
+                                 placeholder="Email address", 
+                                 name="signup[email]", 
+                                 required="")
+              button.btn.btn-lg.btn-success(type="submit") Get Notified!
 
-  .features
     .feature0
       .container
         .row
           .col-md-4
             h1.featurette-heading STREAM FRIENDS
             p.lead.text-muted 
-              | add your friends to your stream 
-              | through the browser, no setup required.
-            a.btn.btn-default(href="#",role="button") Learn more »
+              | Add your friends to your stream 
+              | through your browser, no setup required.
           .col-md-4.dividers
-            h1.featurette-heading ONE CLICK
+            h1.featurette-heading INSTANT SETUP
             p.lead.text-muted 
               | Instant setup with OBS or any other broadcast
-              | program with an embedded browser. 
-              | Add your friends to your stream through the browser, no setup required.
-            a.btn.btn-default(href="#",role="button") Learn more »
+              | program with a browser plugin. 
           .col-md-4
             h1.featurette-heading MULTIPLE GAMES
             p.lead.text-muted Switch from between games seamlessly using the web interface.
-            a.btn.btn-default(href="#",role="button") Learn more »
 
   script.
     var room = '#{room}';

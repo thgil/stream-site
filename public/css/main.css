@@ -14,7 +14,6 @@ body {
 }
 
 .cards {
-  /*white-space:nowrap;*/
   width: 100%;
 }
 
@@ -45,6 +44,11 @@ body {
   font-size: 26px;
   letter-spacing: 0.8px;
   font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.card h4 {
+  font-size: 25px;
+  font-weight: 200;
 }
 
 .cardText {
@@ -82,34 +86,11 @@ body {
 
 /* Signup form */
 .form-signup {
-  width:400px;
-  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.form-signup-heading {
   padding-bottom: 20px;
-}
-
-.form-signup .form-signup-heading
-{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.form-signup .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-}
-
-.form-signup input[type="email"] {
-  display: inline-block;
-  width:290px;
-  margin-right:10px;
-}
-
-.form-signup input[type="submit"] {
-  display: inline-block;
-  width:100px;
 }
 /* End of signup form */
 
@@ -118,18 +99,13 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
   height: auto;
-  /*background-color: GhostWhite;*/
 }
 
 .main-feature {
   height: auto;
-  /*background-size:cover;*/
-  /*color:white;*/
-  /*text-shadow: 2px 2px black;*/
 }
 
 .title {
-  text-align: center;
   font-size: 50px;
   font-weight: 200;
 }

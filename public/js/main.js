@@ -1,5 +1,14 @@
 autoplay = autoplay == "false" ? false : true;
 
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var cardText = new Array(
+  "Easy setup with OBS. No messing around.",
+  "Stream with any number of friends (well, as many that can fit).",
+  "Lots of themes and skins.");
+
 if (autoplay) {
   document.getElementById('localImage').src = "/img/hearthstone-blank-no-text.png";  
 }
@@ -19,10 +28,14 @@ webrtc.on('readyToCall', function () {
   // you can name it anything
   // this should be randomised for the demo site
   webrtc.joinRoom(room);
-  $("#localImage").popover({ title: 'Add a friend!', html: true, content: '<a href="#" id="justatest">This is link</a>', placement: 'left', trigger: 'manual' });
+  $("#localImage").popover({ 
+    html: true, 
+    content: '<h4>Let your friends join your stream. Simply share this link: </h4><input onclick="this.select();" class="form-control input-lg" id="justatest" type="text" value=""/>', 
+    placement: 'left', 
+    trigger: 'manual' });
   $("#localImage").popover('show');
 
-  document.getElementById('justatest').href = window.location.host+'/'+room;
+  document.getElementById('justatest').value = window.location.host+'/'+room;
 });
 
 // this is called before the handlePeerStreamAdded() function
@@ -34,9 +47,8 @@ webrtc.on('videoAdded', function (video, peer) {
   $("#localImage").popover('hide');
   $(video).parent().addClass("card");
   $(video).parent().append("<img src='/img/hearthstone-blank-no-text.png'></img>");
-  $(video).parent().append("<div class='cardText'><h3>Hello hello hello</h3></div>");
-  $(video).parent().animate(
-    {
+  $(video).parent().append("<div class='cardText'><h3>" + cardText[getRandomInt(0, cardText.length)] + "</h3></div>");
+  $(video).parent().animate({
       duration: 500,
       specialEasing: "slideIn"
     });

@@ -20,8 +20,7 @@ var simplewebrtc = new SimpleWebRTC({
   remoteVideosEl: 'remoteVideos',
   // immediately ask for camera access
   // disable this for signup page
-  autoRequestMedia: autoplay,
-  debug: true
+  autoRequestMedia: autoplay
 });
 
 

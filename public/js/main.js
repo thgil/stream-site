@@ -6,7 +6,7 @@ function getRandomInt (min, max) {
 
 var cardText = new Array(
   "Easy setup with OBS. No messing around.",
-  "Stream with any number of friends (well, as many that can fit).",
+  "Stream with any number of friends (well, as many as can fit).",
   "Lots of themes and skins.");
 
 if (autoplay) {
